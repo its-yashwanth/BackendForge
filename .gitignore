@@ -1,0 +1,18 @@
+
+# Build outputs
+bin/
+obj/
+
+# IDE files
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Git
+.git/
+
+# Local environment files
+.env
+.env.*
+!.env.example

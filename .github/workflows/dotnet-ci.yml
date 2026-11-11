@@ -33,7 +33,7 @@ jobs:
       - name: Build application
         run: dotnet build MyFirstApi.csproj --configuration Release --no-restore
 
-            - name: Set up Docker Buildx
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
       - name: Log in to Docker Hub

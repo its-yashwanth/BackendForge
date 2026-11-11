@@ -1,0 +1,34 @@
+
+name: BackendForge CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build ASP.NET Core API
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v7
+
+      - name: Install .NET 10 SDK
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore MyFirstApi.csproj
+
+      - name: Build application
+        run: dotnet build MyFirstApi.csproj --configuration Release --no-restore

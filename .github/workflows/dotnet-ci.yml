@@ -32,3 +32,6 @@ jobs:
 
       - name: Build application
         run: dotnet build MyFirstApi.csproj --configuration Release --no-restore
+
+      - name: Build Docker image
+        run: docker build -t backendforge-api:ci .
